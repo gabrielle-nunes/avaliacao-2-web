@@ -1,0 +1,26 @@
+<div class="container">    
+    <mat-form-field appearance="outline" class="full-width" col-50>
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Preencha o nome do paciente" [(ngModel)]="model.name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width" col-50>
+        <mat-label>Idade</mat-label>
+        <input matInput placeholder="Preencha a idade do paciente" [(ngModel)]="model.idade" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" col-50>
+        <mat-label>Tipo sanguineo</mat-label>
+        <input matInput placeholder="Preencha o tipo sanguineo do paciente" [(ngModel)]="model.tipoSanguineo" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" col-50>
+        <mat-label>Contato</mat-label>
+        <input matInput placeholder="Preencha o contato do paciente" [(ngModel)]="model.contato" required>
+      </mat-form-field>
+
+    <div class="toolbar___form">
+      <button mat-raised-button routerLink="/pacientes">Cancelar</button>
+      <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+    </div>
+  </div>

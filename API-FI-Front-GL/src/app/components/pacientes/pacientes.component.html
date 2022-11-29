@@ -1,0 +1,41 @@
+<div class="container-toolbar">
+    <button class="new" mat-raised-button color="background" routerLink="/paciente/novo"> Novo paciente </button>
+  </div>
+    <div class="div-table mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+  
+        <ng-container matColumnDef="id" >
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element" class="actions">
+            <button mat-button routerLink="/paciente/{{ element.id }}">
+              <mat-icon>edit</mat-icon>
+            </button>
+  
+            <button (click)="delete(element)" mat-button>
+              <mat-icon>delete</mat-icon>
+            </button>
+  
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="idade">
+          <th mat-header-cell *matHeaderCellDef>Idade</th>
+          <td mat-cell *matCellDef="let element">{{ element.idade }}</td>
+        </ng-container>
+        <ng-container matColumnDef="tipoSanguineo">
+            <th mat-header-cell *matHeaderCellDef>Tipo sanguineo</th>
+            <td mat-cell *matCellDef="let element">{{ element.tipoSanguineo }}</td>
+          </ng-container>
+          <ng-container matColumnDef="contato">
+            <th mat-header-cell *matHeaderCellDef> Contato </th>
+            <td mat-cell *matCellDef="let element">{{ element.contato }}</td>
+          </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="columns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+  
+      </table>    
+    </div>
